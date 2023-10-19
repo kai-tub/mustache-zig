@@ -109,7 +109,7 @@ pub fn Parser(comptime options: TemplateOptions) type {
             self.beginLevel(0, self.default_delimiters, render) catch |err| switch (err) {
                 AbortError.ParserAbortedError => return false,
                 else => {
-                    const newerr: (LoadError || RenderError(@TypeOf(render))) = @errSetCast(err);
+                    const newerr: (LoadError || RenderError(@TypeOf(render))) = @errorCast(err);
                     return newerr;
                 },
             };

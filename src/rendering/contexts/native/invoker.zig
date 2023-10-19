@@ -392,7 +392,7 @@ pub fn Invoker(comptime Writer: type, comptime PartialsMap: type, comptime optio
             // Errors are intentionally ignored on lambda calls, interpolating empty strings
             value.invoke(lambda_context) catch |e| {
                 if (isOnErrorSet(Error, e)) {
-                    const err: Error = @errSetCast(e);
+                    const err: Error = @errorCast(e);
                     return err;
                 }
             };
