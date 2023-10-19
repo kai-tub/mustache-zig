@@ -2349,7 +2349,7 @@ const tests = struct {
             };
             defer _ = plenty_of_memory.deinit();
 
-            // Strings are not ownned by the template,
+            // Strings are not owned by the template,
             // Use this option when creating templates from a static string or when rendering direct to a stream
             const RefStringsTemplate = TemplateLoader(.{
                 .source = .{ .file = .{} },
